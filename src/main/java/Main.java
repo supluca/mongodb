@@ -47,6 +47,7 @@ public class Main {
                 Iterator it = allData.iterator();
                 while(it.hasNext()){
                     System.out.println(it.next());
+                    System.out.println("new record");
                 }
 
 
