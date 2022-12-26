@@ -40,8 +40,8 @@ public class Main {
                 Iterator it = allData.iterator();
                 while(it.hasNext()){
                     System.out.println(it.next());
-                    System.out.println("NEXT:");
                 }
+
 
             } catch (MongoException me) {
                 System.err.println("An error occurred while attempting to run a command: " + me);
