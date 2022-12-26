@@ -42,15 +42,13 @@ public class Main {
 //                        System.out.printf("%s: %s%n", cars.get(1), cars.get(2));
 //                    }
 //                }
+                System.out.println();
 
                 FindIterable<Document> allData = collection.find();
                 Iterator it = allData.iterator();
                 while(it.hasNext()){
                     System.out.println(it.next());
-                    System.out.println("new record");
                 }
-
-
 
             } catch (MongoException me) {
                 System.err.println("An error occurred while attempting to run a command: " + me);
