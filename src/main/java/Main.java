@@ -17,6 +17,7 @@ public class Main {
 
             try {
                 Bson command = new BsonDocument("ping", new BsonInt64(1));
+                Document commandResult = database.runCommand(command);
                 System.out.println("Connected successfully to server.");
             } catch (MongoException me) {
                 System.err.println("An error occurred while attempting to run a command: " + me);
