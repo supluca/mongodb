@@ -14,10 +14,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String mongoClientUri = "mongodb+srv://supluca-cluster.tluspsf.mongodb.net/?authSource=%24external&authMechanism=MONGODB-X509&retryWrites=true&w=majority";
-
+        String mongoClientUri = "mongodb+srv://supluca2:supluca2@supluca-cluster.tluspsf.mongodb.net/?retryWrites=true&w=majority";
         try(MongoClient mongoClient = MongoClients.create(mongoClientUri)) {
-            MongoDatabase database = mongoClient.getDatabase("admin");
+            MongoDatabase database = mongoClient.getDatabase("people");
 
             try {
                 Bson command = new BsonDocument("ping", new BsonInt64(1));
@@ -28,6 +27,10 @@ public class Main {
             }
         }
 
+
+    }
+
+    public static void mongoReader(String[] args) {
 
     }
 }
