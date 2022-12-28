@@ -4,6 +4,8 @@ import org.bson.BsonDocument;
 import org.bson.BsonInt64;
 import org.bson.Document;
 import org.bson.conversions.Bson;
+
+import java.lang.reflect.Array;
 import java.util.Iterator;
 
 public class Main {
@@ -19,7 +21,8 @@ public class Main {
 
         MongoDatabase database = client.getDatabase("people");
 
-        MongoCollection collection = new MongoCollection() {
+        MongoCollection<Document> collection = database.getCollection("people");
+
 
 
 
