@@ -10,7 +10,17 @@ import java.util.Iterator;
 
 public class Main {
 
+    // Instantiate CRUD
+    public JavaCrud crudOps = new JavaCrud();
+
     public static void main(String[] args) {
+
+        Main runApp = new Main();
+
+        runApp.runApplication();
+    }
+
+    public void runApplication() {
         // Test 1
         ConnectionString connectionUri = new ConnectionString("mongodb+srv://supluca2:supluca2@supluca-cluster.tluspsf.mongodb.net/?retryWrites=true&w=majority");
 
@@ -23,9 +33,7 @@ public class Main {
 
         MongoCollection<Document> collection = database.getCollection("people");
 
-
-
-
+        System.out.println(crudOps.writeToMongo("luca", "peter"));
 
         // Test 2
 //        String mongoClientUri = "mongodb+srv://supluca2:supluca2@supluca-cluster.tluspsf.mongodb.net/?retryWrites=true&w=majority";
@@ -66,6 +74,5 @@ public class Main {
 //            }
 //
 //        }
-
     }
 }
