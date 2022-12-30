@@ -21,17 +21,6 @@ public class Main {
     }
 
     public void runApplication() {
-        // Test 1
-        ConnectionString connectionUri = new ConnectionString("mongodb+srv://supluca2:supluca2@supluca-cluster.tluspsf.mongodb.net/?retryWrites=true&w=majority");
-
-        MongoClient client = MongoClients.create(
-                MongoClientSettings.builder()
-                        .applyConnectionString(connectionUri)
-                        .applicationName("baenis").build());
-
-        MongoDatabase database = client.getDatabase("people");
-
-        MongoCollection<Document> collection = database.getCollection("people");
 
         System.out.println(crudOps.writeToMongo("luca", "peter"));
 
