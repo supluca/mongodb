@@ -4,6 +4,8 @@ import com.mongodb.client.*;
 import com.mongodb.client.result.InsertOneResult;
 import org.bson.Document;
 
+import javax.swing.text.html.parser.Parser;
+import java.io.FileReader;
 import java.util.Iterator;
 
 public class JavaCrud {
@@ -31,9 +33,16 @@ public class JavaCrud {
         // Select collection
         MongoCollection<Document> collection = database.getCollection("people");
 
-        String data = "";
+        String jsonDocument = "[\n" +
+                "    {\n" +
+                "        firstname: \"luca3\",\n" +
+                "        lastname: \"peter3\"\n" +
+                "    }\n" +
+                "]";
 
-        Document dataToInsert = new Document("firstname", "lastname");
+        // Write to DB and show result
+        /* TO CHANGE: jsonDocument needs to be a Map.... */
+        Document dataToInsert = new Document(jsonDocument);
         InsertOneResult result = collection.insertOne(dataToInsert);
         System.out.println("Result: " + result);
 
